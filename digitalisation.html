@@ -34,7 +34,7 @@
         .pack-content { display: flex; flex-wrap: wrap; gap: 48px; margin: 40px 0; align-items: flex-start; }
         .pack-text { flex: 1; min-width: 300px; }
         .pack-image { flex: 1; min-width: 300px; background: #f8fafc; border-radius: 28px; padding: 20px; text-align: center; border: 1px solid #e2e8f0; }
-        .pack-image svg { max-width: 100%; height: auto; border-radius: 20px; }
+        .pack-image svg, .pack-image img { max-width: 100%; height: auto; border-radius: 20px; }
         .price-card { background: #f8fafc; border-radius: 28px; padding: 32px 24px; margin: 20px 0; text-align: center; border: 2px solid #27AE60; }
         .price-main { font-size: 2rem; font-weight: 800; color: #27AE60; }
         .plus-large { font-size: 1.6rem; font-weight: 800; margin: 12px 0; color: #1e293b; }
@@ -158,97 +158,8 @@
             </div>
         </div>
         <div class="pack-image">
-            <svg viewBox="0 0 600 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration d'une salle informatique scolaire">
-                <defs>
-                    <linearGradient id="wallGrad" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0%" stop-color="#eef2fb"/>
-                        <stop offset="100%" stop-color="#e2e8f5"/>
-                    </linearGradient>
-                    <linearGradient id="screenGrad" x1="0" y1="0" x2="1" y2="1">
-                        <stop offset="0%" stop-color="#27AE60"/>
-                        <stop offset="100%" stop-color="#1A3C6E"/>
-                    </linearGradient>
-                </defs>
-                <rect x="0" y="0" width="600" height="420" rx="20" fill="url(#wallGrad)"/>
-                <rect x="0" y="300" width="600" height="120" rx="0" fill="#d7deee"/>
-                <rect x="0" y="300" width="600" height="6" fill="#c3cce3"/>
-                <!-- fenêtre -->
-                <rect x="40" y="40" width="110" height="90" rx="10" fill="#fff8e1" stroke="#e8c96a" stroke-width="4"/>
-                <line x1="95" y1="40" x2="95" y2="130" stroke="#e8c96a" stroke-width="4"/>
-                <line x1="40" y1="85" x2="150" y2="85" stroke="#e8c96a" stroke-width="4"/>
-                <circle cx="70" cy="65" r="12" fill="#ffe082"/>
-                <!-- wifi -->
-                <g transform="translate(500,50)" stroke="#27AE60" stroke-width="5" fill="none" stroke-linecap="round">
-                    <path d="M -30 15 A 42 42 0 0 1 30 15"/>
-                    <path d="M -18 27 A 24 24 0 0 1 18 27"/>
-                    <circle cx="0" cy="38" r="6" fill="#27AE60" stroke="none"/>
-                </g>
-                <!-- tableau interactif avant -->
-                <rect x="230" y="55" width="140" height="90" rx="8" fill="#1A3C6E"/>
-                <rect x="240" y="65" width="120" height="70" rx="4" fill="url(#screenGrad)"/>
-                <polyline points="252,120 275,95 295,110 320,80 348,90" fill="none" stroke="#FFD700" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                <rect x="295" y="145" width="10" height="18" fill="#8a93a6"/>
-                <rect x="270" y="163" width="60" height="8" rx="4" fill="#8a93a6"/>
-                <!-- rangées de bureaux -->
-                <!-- rangée arrière -->
-                <g>
-                    <!-- bureau 1 -->
-                    <g transform="translate(70,190)">
-                        <rect x="0" y="40" width="90" height="14" rx="4" fill="#B8860B"/>
-                        <rect x="8" y="10" width="45" height="32" rx="4" fill="#1A3C6E"/>
-                        <rect x="12" y="14" width="37" height="24" rx="2" fill="#27AE60"/>
-                        <rect x="55" y="30" width="26" height="14" rx="2" fill="#64748b"/>
-                        <circle cx="45" cy="80" r="14" fill="#1A3C6E"/>
-                        <rect x="30" y="92" width="30" height="34" rx="10" fill="#B8860B"/>
-                    </g>
-                    <!-- bureau 2 -->
-                    <g transform="translate(255,190)">
-                        <rect x="0" y="40" width="90" height="14" rx="4" fill="#B8860B"/>
-                        <rect x="8" y="10" width="45" height="32" rx="4" fill="#1A3C6E"/>
-                        <rect x="12" y="14" width="37" height="24" rx="2" fill="#27AE60"/>
-                        <rect x="55" y="30" width="26" height="14" rx="2" fill="#64748b"/>
-                        <circle cx="45" cy="80" r="14" fill="#27AE60"/>
-                        <rect x="30" y="92" width="30" height="34" rx="10" fill="#1A3C6E"/>
-                    </g>
-                    <!-- bureau 3 -->
-                    <g transform="translate(440,190)">
-                        <rect x="0" y="40" width="90" height="14" rx="4" fill="#B8860B"/>
-                        <rect x="8" y="10" width="45" height="32" rx="4" fill="#1A3C6E"/>
-                        <rect x="12" y="14" width="37" height="24" rx="2" fill="#27AE60"/>
-                        <rect x="55" y="30" width="26" height="14" rx="2" fill="#64748b"/>
-                        <circle cx="45" cy="80" r="14" fill="#B8860B"/>
-                        <rect x="30" y="92" width="30" height="34" rx="10" fill="#27AE60"/>
-                    </g>
-                </g>
-                <!-- rangée avant, légèrement plus grande -->
-                <g transform="scale(1.12)">
-                    <g transform="translate(28,225)">
-                        <rect x="0" y="40" width="95" height="15" rx="4" fill="#B8860B"/>
-                        <rect x="8" y="8" width="48" height="34" rx="4" fill="#1A3C6E"/>
-                        <rect x="12" y="12" width="40" height="26" rx="2" fill="#27AE60"/>
-                        <rect x="58" y="30" width="28" height="15" rx="2" fill="#64748b"/>
-                        <circle cx="47" cy="84" r="15" fill="#1A3C6E"/>
-                        <rect x="31" y="97" width="32" height="36" rx="11" fill="#27AE60"/>
-                    </g>
-                    <g transform="translate(220,225)">
-                        <rect x="0" y="40" width="95" height="15" rx="4" fill="#B8860B"/>
-                        <rect x="8" y="8" width="48" height="34" rx="4" fill="#1A3C6E"/>
-                        <rect x="12" y="12" width="40" height="26" rx="2" fill="#27AE60"/>
-                        <rect x="58" y="30" width="28" height="15" rx="2" fill="#64748b"/>
-                        <circle cx="47" cy="84" r="15" fill="#B8860B"/>
-                        <rect x="31" y="97" width="32" height="36" rx="11" fill="#1A3C6E"/>
-                    </g>
-                    <g transform="translate(412,225)">
-                        <rect x="0" y="40" width="95" height="15" rx="4" fill="#B8860B"/>
-                        <rect x="8" y="8" width="48" height="34" rx="4" fill="#1A3C6E"/>
-                        <rect x="12" y="12" width="40" height="26" rx="2" fill="#27AE60"/>
-                        <rect x="58" y="30" width="28" height="15" rx="2" fill="#64748b"/>
-                        <circle cx="47" cy="84" r="15" fill="#27AE60"/>
-                        <rect x="31" y="97" width="32" height="36" rx="11" fill="#B8860B"/>
-                    </g>
-                </g>
-            </svg>
-            <p style="margin-top:12px; font-size:0.8rem; color:#64748b;">Illustration — salle informatique type</p>
+            <img src="images/Digitalisation.jpg" alt="Salle informatique équipée en ordinateurs">
+            <p style="margin-top:12px; font-size:0.8rem; color:#64748b;">Photo d'illustration — le programme fournit des <strong>ordinateurs portables</strong>, pas les postes fixes visibles sur cette photo.</p>
         </div>
     </div>
 
