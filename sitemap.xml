@@ -31,8 +31,13 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ecole.suitemg.com/business.html</loc>
-    <lastmod>2026-09-21</lastmod>
+    <loc>https://ecole.suitemg.com/pedago-basique.html</loc>
+    <lastmod>2026-09-25</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ecole.suitemg.com/pedago-pro.html</loc>
+    <lastmod>2026-09-25</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
