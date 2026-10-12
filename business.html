@@ -60,6 +60,16 @@
         .pack-switch { display: flex; justify-content: center; gap: 20px; margin: 40px 0 20px; flex-wrap: wrap; }
         .pack-switch a { background: white; border: 1px solid #e2e8f0; padding: 10px 24px; border-radius: 40px; text-decoration: none; color: #1e293b; font-weight: 500; transition: 0.3s; }
         .pack-switch a:hover { background: #1A3C6E; color: white; border-color: #1A3C6E; }
+        .pack-detail { background: white; border-radius: 24px; padding: 32px; margin: 24px 0; border: 1px solid #e2e8f0; }
+        .pack-detail h2 { font-size: 1.6rem; color: #1A3C6E; margin-bottom: 16px; }
+        .pack-detail p { color: #475569; margin-bottom: 14px; }
+        .pack-detail-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; margin-top: 20px; }
+        .pack-detail-item h4 { font-size: 1.05rem; color: #1e293b; margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
+        .pack-detail-item h4 i { color: #27AE60; }
+        .pack-detail-item p { font-size: 0.92rem; margin-bottom: 0; }
+        .pack-faq-item { margin-bottom: 20px; }
+        .pack-faq-item summary { font-weight: 700; color: #1A3C6E; cursor: pointer; margin-bottom: 8px; }
+        .pack-faq-item p, .pack-faq-item li { color: #475569; font-size: 0.95rem; }
         .footer { background: #1A3C6E; padding: 48px 0 24px; color: #cbd5e1; margin-top: 60px; }
         .footer-grid { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 32px; margin-bottom: 40px; }
         .footer a { color: #9ca3af; text-decoration: none; }
@@ -198,6 +208,47 @@
         <div class="pack-image"><img src="images/Capturebusiness.png" alt="Aperçu Pack BUSINESS"><p style="margin-top:12px; font-size:0.8rem; color:#64748b;">Aperçu</p></div>
     </div>
     <div class="pack-switch"><a href="premium.html">💎 Voir le pack PREMIUM</a><a href="pro.html">⭐ Voir le pack PRO</a></div>
+    <div class="pack-detail">
+        <h2>Pour qui est fait le Pack BUSINESS ?</h2>
+        <p>Le Pack BUSINESS reprend l'intégralité du <a href="premium.html">Pack PREMIUM</a> (élèves, bulletins, emploi du temps, comptabilité, paie) et y ajoute un module Cantine dédié, séparé de l'écolage. C'est le pack le plus complet de la gamme, pour les établissements avec une cantine à gérer en plus du reste.</p>
+        <div class="pack-detail-grid">
+            <div class="pack-detail-item">
+                <h4><i class="fas fa-check-circle"></i> Gestion Base + BulletinApp + EDT</h4>
+                <p>Les modules du Pack BASIQUE : classes, élèves, bulletins PDF et emploi du temps.</p>
+            </div>
+            <div class="pack-detail-item">
+                <h4><i class="fas fa-check-circle"></i> ComptaÉcole + Gestion de Paie</h4>
+                <p>Encaissements, dépenses, reçus PDF, et bulletins de paie avec CNAPS/IRSA, primes et retenues.</p>
+            </div>
+            <div class="pack-detail-item">
+                <h4><i class="fas fa-check-circle"></i> Module Cantine dédié</h4>
+                <p>Repas, listes de présence et paiements groupés, suivis séparément de l'écolage.</p>
+            </div>
+        </div>
+    </div>
+    <div class="pack-detail">
+        <h2>Questions fréquentes sur le Pack BUSINESS</h2>
+        <details class="pack-faq-item" open>
+            <summary>Comment se décompose le paiement sur les premières années ?</summary>
+            <p>L'achat initial (600 000 Ar) inclut déjà la première année. La redevance annuelle de 220 000 Ar ne commence qu'à partir de la 2<sup>e</sup> année : Année 1 = 600 000 Ar (rien de plus), Année 2 = 220 000 Ar, Année 3 = 220 000 Ar.</p>
+        </details>
+        <details class="pack-faq-item">
+            <summary>Que couvre la redevance annuelle de 220 000 Ar ?</summary>
+            <p>Elle inclut la nouvelle clé d'authentification de l'année ainsi que la mise à jour annuelle majeure du logiciel.</p>
+        </details>
+        <details class="pack-faq-item">
+            <summary>Que se passe-t-il si je ne renouvelle pas ?</summary>
+            <p>Le logiciel se bloque après 12 mois sans renouvellement. Vos données restent intactes mais inaccessibles tant que la licence n'est pas renouvelée.</p>
+        </details>
+        <details class="pack-faq-item">
+            <summary>Quelle configuration faut-il pour installer le Pack BUSINESS ?</summary>
+            <p>Windows 10/11 ou Linux, 4 Go de RAM et 500 Mo d'espace disque suffisent.</p>
+        </details>
+        <details class="pack-faq-item">
+            <summary>Quelle est la différence avec le Pack PREMIUM ?</summary>
+            <p>Le Pack BUSINESS reprend tout le <a href="premium.html">Pack PREMIUM</a> et y ajoute un module Cantine dédié avec paiements groupés séparés de l'écolage.</p>
+        </details>
+    </div>
 </section>
 <footer class="footer">
     <div class="container">

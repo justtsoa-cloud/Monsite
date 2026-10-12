@@ -70,6 +70,16 @@
         .pack-switch { display: flex; justify-content: center; gap: 20px; margin: 40px 0 20px; flex-wrap: wrap; }
         .pack-switch a { background: white; border: 1px solid #e2e8f0; padding: 10px 24px; border-radius: 40px; text-decoration: none; color: #1e293b; font-weight: 500; transition: 0.3s; }
         .pack-switch a:hover { background: #1A3C6E; color: white; border-color: #1A3C6E; }
+        .pack-detail { background: white; border-radius: 24px; padding: 32px; margin: 24px 0; border: 1px solid #e2e8f0; }
+        .pack-detail h2 { font-size: 1.6rem; color: #1A3C6E; margin-bottom: 16px; }
+        .pack-detail p { color: #475569; margin-bottom: 14px; }
+        .pack-detail-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; margin-top: 20px; }
+        .pack-detail-item h4 { font-size: 1.05rem; color: #1e293b; margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
+        .pack-detail-item h4 i { color: #27AE60; }
+        .pack-detail-item p { font-size: 0.92rem; margin-bottom: 0; }
+        .pack-faq-item { margin-bottom: 20px; }
+        .pack-faq-item summary { font-weight: 700; color: #1A3C6E; cursor: pointer; margin-bottom: 8px; }
+        .pack-faq-item p, .pack-faq-item li { color: #475569; font-size: 0.95rem; }
         .footer { background: #1A3C6E; padding: 48px 0 24px; color: #cbd5e1; margin-top: 60px; }
         .footer-grid { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 32px; margin-bottom: 40px; }
         .footer a { color: #9ca3af; text-decoration: none; }
@@ -227,6 +237,51 @@
         <div class="pack-image"><img src="images/Capturebasique.png" alt="Aperçu Pack BASIQUE"><p style="margin-top:12px; font-size:0.8rem; color:#64748b;">Aperçu</p></div>
     </div>
     <div class="pack-switch"><a href="pro.html">⭐ Voir le pack PRO</a><a href="premium.html">💎 Voir le pack PREMIUM</a></div>
+    <div class="pack-detail">
+        <h2>Pour qui est fait le Pack BASIQUE ?</h2>
+        <p>Le Pack BASIQUE est la porte d'entrée de Suite École : il réunit les trois modules qui couvrent le cœur du travail administratif et pédagogique — la fiche élève, les bulletins et l'emploi du temps — sans la comptabilité ni la paie, qui restent gérées séparément. C'est la formule adaptée aux établissements qui veulent d'abord digitaliser le suivi scolaire, avant d'ajouter la gestion financière avec le <a href="pro.html">Pack PRO</a> ou le <a href="premium.html">Pack PREMIUM</a>.</p>
+        <div class="pack-detail-grid">
+            <div class="pack-detail-item">
+                <h4><i class="fas fa-check-circle"></i> Gestion Base</h4>
+                <p>Classes, élèves, matières, professeurs et affectations — la fondation commune à toute la suite, sur laquelle s'appuient les bulletins et l'emploi du temps.</p>
+            </div>
+            <div class="pack-detail-item">
+                <h4><i class="fas fa-check-circle"></i> BulletinApp</h4>
+                <p>Saisie des notes, génération des bulletins PDF, décisions de passage, avec un serveur Android dédié pour que les professeurs saisissent leurs notes depuis leur téléphone.</p>
+            </div>
+            <div class="pack-detail-item">
+                <h4><i class="fas fa-check-circle"></i> EDT</h4>
+                <p>Emploi du temps par classe et par professeur, avec suivi des heures effectuées — utile pour vérifier la charge horaire réelle de chaque enseignant.</p>
+            </div>
+            <div class="pack-detail-item">
+                <h4><i class="fas fa-check-circle"></i> Vue globale par élève</h4>
+                <p>Un dashboard centralisé par élève pour visualiser ses notes, son passage et son suivi sans naviguer entre plusieurs écrans.</p>
+            </div>
+        </div>
+    </div>
+    <div class="pack-detail">
+        <h2>Questions fréquentes sur le Pack BASIQUE</h2>
+        <details class="pack-faq-item" open>
+            <summary>Comment se décompose le paiement sur les premières années ?</summary>
+            <p>L'achat initial (250 000 Ar) inclut déjà la première année d'utilisation du logiciel et de la clé. La redevance annuelle de 120 000 Ar ne commence qu'à partir de la 2<sup>e</sup> année : Année 1 = 250 000 Ar (rien de plus), Année 2 = 120 000 Ar, Année 3 = 120 000 Ar.</p>
+        </details>
+        <details class="pack-faq-item">
+            <summary>Que couvre la redevance annuelle de 120 000 Ar ?</summary>
+            <p>Elle inclut la nouvelle clé d'authentification de l'année ainsi que la mise à jour annuelle majeure du logiciel.</p>
+        </details>
+        <details class="pack-faq-item">
+            <summary>Que se passe-t-il si je ne renouvelle pas ?</summary>
+            <p>Le logiciel se bloque après 12 mois sans renouvellement. Vos données restent intactes mais inaccessibles tant que la licence n'est pas renouvelée.</p>
+        </details>
+        <details class="pack-faq-item">
+            <summary>Quelle configuration faut-il pour installer le Pack BASIQUE ?</summary>
+            <p>Windows 10/11 ou Linux, 4 Go de RAM et 500 Mo d'espace disque suffisent.</p>
+        </details>
+        <details class="pack-faq-item">
+            <summary>Quelle est la différence avec le Pack PRO ?</summary>
+            <p>Le Pack PRO reprend exactement les modules du Pack BASIQUE et y ajoute la comptabilité (ComptaÉcole) pour gérer encaissements, dépenses et trésorerie dans le même logiciel. Voir le <a href="pro.html">Pack PRO</a>.</p>
+        </details>
+    </div>
 </section>
 <footer class="footer">
     <div class="container">
