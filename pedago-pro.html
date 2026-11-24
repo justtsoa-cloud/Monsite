@@ -231,19 +231,20 @@
 <section class="container">
     <div class="pack-content">
         <div class="pack-text">
+            <div data-currency-mount></div>
             <div class="price-card">
                 <input type="radio" name="formule" id="fb1" class="formula-radio" checked>
                 <input type="radio" name="formule" id="fb2" class="formula-radio">
                 <input type="radio" name="formule" id="fb3" class="formula-radio">
-                <div class="formula-tabs">
+                <div class="formula-tabs eur-usd-hide">
                     <label for="fb1">Achat + renouvellement</label>
                     <label for="fb2">Mensuel</label>
                     <label for="fb3">Forfait 3 ans</label>
                 </div>
                 <div class="formula-panel" id="panel-fb1">
-                    <div class="price-main">400 000 Ar achat initial</div>
+                    <div class="price-main"><span data-ar="400 000 Ar" data-eur="130 €" data-usd="120 $">400 000 Ar</span> achat initial</div>
                     <div class="plus-large">puis</div>
-                    <div class="price-year">180 000 Ar / An</div>
+                    <div class="price-year"><span data-ar="180 000 Ar" data-eur="55 €" data-usd="45 $">180 000 Ar</span> / An</div>
                     <div class="renewal-text">
                         Redevance annuelle incluant<br>
                         la nouvelle clé d'authentification
@@ -252,11 +253,11 @@
                     <div class="renewal-text" style="margin-top: 0;">mise à jour annuelle majeure</div>
                     <div class="formula-note">★ Notre formule recommandée, la plus avantageuse</div>
                 </div>
-                <div class="formula-panel" id="panel-fb2">
+                <div class="formula-panel eur-usd-hide" id="panel-fb2">
                     <div class="price-main">50 000 Ar / mois</div>
                     <div class="renewal-text">Paiement mensuel, sans engagement — résiliable à tout moment.</div>
                 </div>
-                <div class="formula-panel" id="panel-fb3">
+                <div class="formula-panel eur-usd-hide" id="panel-fb3">
                     <div class="price-main">1 150 000 Ar</div>
                     <div class="renewal-text">Zéro souci jusqu'à l'échéance : couvre l'installation et les 3 années suivantes (4 ans d'utilisation), sans redevance à régler entre-temps.</div>
                 </div>
@@ -398,5 +399,6 @@
 </script>
 <script data-goatcounter="https://ntsoa.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
+<script src="currency.js"></script>
 </body>
 </html>
