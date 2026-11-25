@@ -393,8 +393,8 @@ function renderCompare(){
   const g = DATA[state.gamme];
   const f = g.formules.find(x => x.key === state.formule);
   $compareHead.innerHTML = `
-    <div class="curr-hero-row">
-      <span class="badge" style="background:${f.color}">${f.badge} ${g.label} · ${f.name}</span>
+    <span class="badge" style="background:${f.color}">${f.badge} ${g.label} · ${f.name}</span>
+    <div class="curr-select-row">
       <span class="curr-select-label">Sélecteur de devises :</span>
       <div data-currency-mount></div>
     </div>
