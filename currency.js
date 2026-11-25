@@ -1,4 +1,4 @@
-// Sélecteur de monnaie Ariary / Euro / Dollar, dans la barre de menu, partagé par toutes les pages de prix.
+// Sélecteur de monnaie Ariary / Euro / Dollar, affiché à côté du nom de chaque pack.
 // Persisté en localStorage pour rester cohérent quand on navigue entre les pages.
 (function () {
     var KEY = "suiteecole_currency";
@@ -37,7 +37,7 @@
             });
         }
         document.querySelectorAll(".curr-trigger-label").forEach(function (el) {
-            el.textContent = "💱 " + CURR[c].label;
+            el.textContent = CURR[c].label;
         });
         document.querySelectorAll(".curr-opt").forEach(function (opt) {
             opt.classList.toggle("active", opt.getAttribute("data-curr") === c);
@@ -47,22 +47,21 @@
     function injectStyle() {
         var style = document.createElement("style");
         style.textContent =
+            ".curr-hero-row{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:20px}" +
+            ".curr-select-label{font-size:0.8rem;font-weight:700;letter-spacing:0.03em;text-transform:uppercase;color:#64748b}" +
             ".curr-widget{position:relative;display:inline-flex}" +
-            ".curr-trigger{display:flex;align-items:center;gap:6px;padding:9px 14px;border-radius:12px;background:#ffffff;" +
-            "border:1.5px solid #e2e8f0;box-shadow:0 3px 0 #e2e8f0;font:inherit;font-weight:700;font-size:0.95rem;color:#1A3C6E;" +
-            "cursor:pointer;transition:transform .1s ease, box-shadow .1s ease, background .15s ease, border-color .15s ease}" +
-            ".curr-trigger:hover{border-color:rgba(26,60,110,0.35);background:rgba(26,60,110,0.04)}" +
-            ".curr-trigger:active{transform:translateY(3px);box-shadow:0 0 0 #e2e8f0}" +
-            ".curr-trigger .curr-chev{font-size:0.7rem;color:#94a3b8}" +
-            ".curr-menu{display:none;position:absolute;top:calc(100% + 10px);right:0;min-width:170px;background:#fff;" +
-            "border:1px solid #e2e8f0;border-radius:16px;box-shadow:0 8px 20px rgba(0,0,0,0.1);padding:6px;z-index:1100}" +
+            ".curr-trigger{display:flex;align-items:center;gap:6px;padding:8px 16px;border-radius:40px;background:#ffffff;" +
+            "border:1.5px solid #1A3C6E;font:inherit;font-weight:700;font-size:0.9rem;color:#1A3C6E;cursor:pointer;transition:0.2s}" +
+            ".curr-trigger:hover{background:#1A3C6E;color:#ffffff}" +
+            ".curr-trigger .curr-chev{font-size:0.7rem}" +
+            ".curr-menu{display:none;position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);min-width:170px;" +
+            "background:#fff;border:1px solid #e2e8f0;border-radius:16px;box-shadow:0 8px 20px rgba(0,0,0,0.1);padding:6px;" +
+            "z-index:50;text-align:left}" +
             ".curr-menu.open{display:block}" +
             ".curr-opt{display:flex;align-items:center;width:100%;padding:9px 14px;border-radius:10px;border:none;background:none;" +
             "text-align:left;font:inherit;font-weight:600;font-size:0.92rem;color:#1e293b;cursor:pointer}" +
             ".curr-opt:hover{background:#f8fafc;color:#1A3C6E}" +
-            ".curr-opt.active{background:rgba(26,60,110,0.08);color:#1A3C6E}" +
-            "@media (max-width:1024px){.curr-menu{position:static;margin-top:8px;box-shadow:none;width:100%}" +
-            ".curr-widget{width:100%;flex-direction:column}.curr-trigger{width:100%;justify-content:center}}";
+            ".curr-opt.active{background:rgba(26,60,110,0.08);color:#1A3C6E}";
         document.head.appendChild(style);
     }
 
@@ -105,19 +104,26 @@
             widget.appendChild(menu);
             mount.appendChild(widget);
         });
+    }
 
+    var outsideClickBound = false;
+    function bindOutsideClick() {
+        if (outsideClickBound) return;
+        outsideClickBound = true;
         document.addEventListener("click", function () {
             document.querySelectorAll(".curr-menu.open").forEach(function (m) { m.classList.remove("open"); });
         });
     }
 
-    // Exposé pour les pages qui reconstruisent leur prix dynamiquement en JS
-    // (ex. offres.html) et doivent ré-appliquer la monnaie après chaque rendu.
-    window.SuiteEcoleCurrency = { get: getCurrency, apply: apply };
+    // Exposé pour les pages qui reconstruisent leur prix (et leur point de montage)
+    // dynamiquement en JS (ex. offres.html) : mount() pour reconstruire le widget après
+    // un innerHTML, apply() pour ré-appliquer la monnaie courante après chaque rendu.
+    window.SuiteEcoleCurrency = { get: getCurrency, apply: apply, mount: mountSwitch };
 
     document.addEventListener("DOMContentLoaded", function () {
         injectStyle();
         mountSwitch();
+        bindOutsideClick();
         apply(getCurrency());
     });
 })();

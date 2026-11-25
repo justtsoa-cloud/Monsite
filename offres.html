@@ -208,7 +208,6 @@
                 </div>
             </div>
             <a href="faq.html">💬 FAQ</a>
-            <div data-currency-mount></div>
             <div class="nav-isolated">
                 <a href="online.html" class="nav-accent is-online">☁️ Online</a>
                 <a href="https://telechargements.suitemg.com" target="_blank" class="nav-accent is-telecharger"><i class="fas fa-download"></i> Télécharger</a>
@@ -394,7 +393,11 @@ function renderCompare(){
   const g = DATA[state.gamme];
   const f = g.formules.find(x => x.key === state.formule);
   $compareHead.innerHTML = `
-    <span class="badge" style="background:${f.color}">${f.badge} ${g.label} · ${f.name}</span>
+    <div class="curr-hero-row">
+      <span class="badge" style="background:${f.color}">${f.badge} ${g.label} · ${f.name}</span>
+      <span class="curr-select-label">Sélecteur de devises :</span>
+      <div data-currency-mount></div>
+    </div>
     <h2>${f.tagline}</h2>
     <p>Trois façons de régler cette formule — choisissez celle qui convient à votre trésorerie.</p>
   `;
@@ -422,6 +425,7 @@ function renderCompare(){
 
 function applyCurrency() {
   if (window.SuiteEcoleCurrency) {
+    window.SuiteEcoleCurrency.mount();
     window.SuiteEcoleCurrency.apply(window.SuiteEcoleCurrency.get());
   }
 }
