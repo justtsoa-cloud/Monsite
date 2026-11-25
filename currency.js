@@ -66,6 +66,10 @@
         });
     }
 
+    // Exposé pour les pages qui reconstruisent leur prix dynamiquement en JS
+    // (ex. offres.html) et doivent ré-appliquer la monnaie après chaque rendu.
+    window.SuiteEcoleCurrency = { get: getCurrency, apply: apply };
+
     document.addEventListener("DOMContentLoaded", function () {
         injectStyle();
         mountSwitch();

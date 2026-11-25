@@ -221,6 +221,7 @@
     <div class="container">
         <h1>💰 Nos Offres</h1>
         <p>Trois gammes, chacune avec ses formules. Choisissez la vôtre, puis comparez les types de paiement d'un coup d'œil.</p>
+        <div data-currency-mount></div>
     </div>
 </section>
 
@@ -295,6 +296,7 @@
     });
 </script>
 <script data-goatcounter="https://ntsoa.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script src="currency.js"></script>
 
 <script>
 const DATA = {
@@ -303,13 +305,21 @@ const DATA = {
     tagline: "La suite desktop tout-en-un pour piloter votre école : élèves, notes, bulletins, comptabilité, emploi du temps.",
     formules: [
       { key:"basique", name:"Basique", badge:"📘", tagline:"L'essentiel pour bien démarrer", color:"#1A3C6E", href:"basique.html",
-        achatInit:"250 000 Ar", achatRenew:"120 000 Ar / an", mensuel:"30 000 Ar / mois", forfait:"750 000 Ar" },
+        achatInit:"250 000 Ar", achatInitEur:"80 €", achatInitUsd:"70 $",
+        achatRenew:"120 000 Ar", achatRenewEur:"40 €", achatRenewUsd:"30 $",
+        mensuel:"30 000 Ar / mois", forfait:"750 000 Ar" },
       { key:"pro", name:"Pro", badge:"⭐", tagline:"La solution complète pour votre école — le plus vendu", color:"#F39C12", href:"pro.html",
-        achatInit:"400 000 Ar", achatRenew:"180 000 Ar / an", mensuel:"50 000 Ar / mois", forfait:"1 150 000 Ar" },
+        achatInit:"400 000 Ar", achatInitEur:"130 €", achatInitUsd:"120 $",
+        achatRenew:"180 000 Ar", achatRenewEur:"55 €", achatRenewUsd:"45 $",
+        mensuel:"50 000 Ar / mois", forfait:"1 150 000 Ar" },
       { key:"premium", name:"Premium", badge:"💎", tagline:"La gestion scolaire ultime", color:"#8E44AD", href:"premium.html",
-        achatInit:"500 000 Ar", achatRenew:"200 000 Ar / an", mensuel:"60 000 Ar / mois", forfait:"1 350 000 Ar" },
+        achatInit:"500 000 Ar", achatInitEur:"160 €", achatInitUsd:"150 $",
+        achatRenew:"200 000 Ar", achatRenewEur:"65 €", achatRenewUsd:"55 $",
+        mensuel:"60 000 Ar / mois", forfait:"1 350 000 Ar" },
       { key:"gestion", name:"Gestion", badge:"🗂️", tagline:"Le pilotage administratif, sans le superflu", color:"#64748b", href:"gestion.html",
-        achatInit:"500 000 Ar", achatRenew:"200 000 Ar / an", mensuel:"60 000 Ar / mois", forfait:"1 350 000 Ar" }
+        achatInit:"500 000 Ar", achatInitEur:"160 €", achatInitUsd:"150 $",
+        achatRenew:"200 000 Ar", achatRenewEur:"65 €", achatRenewUsd:"55 $",
+        mensuel:"60 000 Ar / mois", forfait:"1 350 000 Ar" }
     ]
   },
   lsu: {
@@ -317,9 +327,13 @@ const DATA = {
     tagline: "Programme scolaire français — notation LSU par compétences et domaines.",
     formules: [
       { key:"pro", name:"Pro", badge:"🇫🇷", tagline:"La solution complète, programme français", color:"#0055A4", href:"pro-fr.html",
-        achatInit:"500 000 Ar", achatRenew:"180 000 Ar / an", mensuel:null, forfait:"1 300 000 Ar" },
+        achatInit:"500 000 Ar", achatInitEur:"160 €", achatInitUsd:"150 $",
+        achatRenew:"180 000 Ar", achatRenewEur:"55 €", achatRenewUsd:"45 $",
+        mensuel:null, forfait:"1 300 000 Ar" },
       { key:"premium", name:"Premium", badge:"🇫🇷", tagline:"Le pilotage total, programme français", color:"#0055A4", href:"business-fr.html",
-        achatInit:"700 000 Ar", achatRenew:"220 000 Ar / an", mensuel:null, forfait:"1 650 000 Ar" }
+        achatInit:"700 000 Ar", achatInitEur:"210 €", achatInitUsd:"200 $",
+        achatRenew:"220 000 Ar", achatRenewEur:"70 €", achatRenewUsd:"60 $",
+        mensuel:null, forfait:"1 650 000 Ar" }
     ]
   },
   pedago: {
@@ -327,9 +341,13 @@ const DATA = {
     tagline: "Cahier de texte numérique — leçons avec pièces jointes, QCM corrigés automatiquement.",
     formules: [
       { key:"basique", name:"Basique", badge:"📗", tagline:"Le suivi pédagogique, simplifié", color:"#1A3C6E", href:"pedago-basique.html",
-        achatInit:"200 000 Ar", achatRenew:"100 000 Ar / an", mensuel:"25 000 Ar / mois", forfait:"625 000 Ar" },
+        achatInit:"200 000 Ar", achatInitEur:"65 €", achatInitUsd:"55 $",
+        achatRenew:"100 000 Ar", achatRenewEur:"30 €", achatRenewUsd:"20 $",
+        mensuel:"25 000 Ar / mois", forfait:"625 000 Ar" },
       { key:"pro", name:"Pro", badge:"📗", tagline:"Le suivi pédagogique complet", color:"#1A3C6E", href:"pedago-pro.html",
-        achatInit:"400 000 Ar", achatRenew:"180 000 Ar / an", mensuel:"50 000 Ar / mois", forfait:"1 150 000 Ar" }
+        achatInit:"400 000 Ar", achatInitEur:"130 €", achatInitUsd:"120 $",
+        achatRenew:"180 000 Ar", achatRenewEur:"55 €", achatRenewUsd:"45 $",
+        mensuel:"50 000 Ar / mois", forfait:"1 150 000 Ar" }
     ]
   }
 };
@@ -366,9 +384,10 @@ function renderFormules(){
       <span class="formule-badge">${f.badge} ${f.name}</span>
       <h3>${g.label.replace('Gamme ','')} ${f.name}</h3>
       <p class="tagline">${f.tagline}</p>
-      <div class="from">À partir de <strong>${f.achatInit}</strong> + ${f.achatRenew}</div>
+      <div class="from">À partir de <strong><span data-ar="${f.achatInit}" data-eur="${f.achatInitEur}" data-usd="${f.achatInitUsd}">${f.achatInit}</span></strong> + <span data-ar="${f.achatRenew}" data-eur="${f.achatRenewEur}" data-usd="${f.achatRenewUsd}">${f.achatRenew}</span> / an</div>
     </button>
   `).join("");
+  applyCurrency();
 }
 
 function renderCompare(){
@@ -380,24 +399,31 @@ function renderCompare(){
     <p>Trois façons de régler cette formule — choisissez celle qui convient à votre trésorerie.</p>
   `;
   const mensuelCard = f.mensuel
-    ? `<div class="pay-card"><span class="tag">Mensuel</span><div class="amount">${f.mensuel}</div><p class="desc">Sans engagement — résiliable à tout moment.</p></div>`
-    : `<div class="pay-card unavailable"><span class="tag">Mensuel</span><div class="amount">Non proposé sur cette gamme</div></div>`;
+    ? `<div class="pay-card eur-usd-hide"><span class="tag">Mensuel</span><div class="amount">${f.mensuel}</div><p class="desc">Sans engagement — résiliable à tout moment.</p></div>`
+    : `<div class="pay-card unavailable eur-usd-hide"><span class="tag">Mensuel</span><div class="amount">Non proposé sur cette gamme</div></div>`;
   $compareGrid.innerHTML = `
     <div class="pay-card recommended">
       <span class="star">★</span>
       <span class="tag">Recommandée</span>
-      <div class="amount">${f.achatInit}<br><small>achat initial</small></div>
-      <div class="then">puis <strong>${f.achatRenew}</strong></div>
+      <div class="amount"><span data-ar="${f.achatInit}" data-eur="${f.achatInitEur}" data-usd="${f.achatInitUsd}">${f.achatInit}</span><br><small>achat initial</small></div>
+      <div class="then">puis <strong><span data-ar="${f.achatRenew}" data-eur="${f.achatRenewEur}" data-usd="${f.achatRenewUsd}">${f.achatRenew}</span> / an</strong></div>
       <p class="desc">Redevance annuelle incluant la clé d'authentification et la mise à jour majeure.</p>
     </div>
     ${mensuelCard}
-    <div class="pay-card">
+    <div class="pay-card eur-usd-hide">
       <span class="tag">Forfait 3 ans</span>
       <div class="amount">${f.forfait}</div>
       <p class="desc">Installation + 3 années suivantes (4 ans d'usage), sans redevance entre-temps.</p>
     </div>
   `;
   $compareCta.innerHTML = `<a href="${f.href}">Voir la page complète de ${g.label.replace('Gamme ','')} ${f.name} →</a>`;
+  applyCurrency();
+}
+
+function applyCurrency() {
+  if (window.SuiteEcoleCurrency) {
+    window.SuiteEcoleCurrency.apply(window.SuiteEcoleCurrency.get());
+  }
 }
 
 function renderCrumbs(){
