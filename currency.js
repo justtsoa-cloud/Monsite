@@ -47,7 +47,7 @@
     function injectStyle() {
         var style = document.createElement("style");
         style.textContent =
-            ".curr-select-row{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:20px}" +
+            ".curr-select-row{display:flex;align-items:center;justify-content:center;gap:16px 10px;flex-wrap:wrap;margin-bottom:20px}" +
             ".curr-select-label{font-size:0.8rem;font-weight:700;letter-spacing:0.03em;text-transform:uppercase;color:#64748b}" +
             ".curr-widget{position:relative;display:inline-flex}" +
             ".curr-trigger{display:flex;align-items:center;gap:6px;padding:8px 16px;border-radius:40px;background:#ffffff;" +
